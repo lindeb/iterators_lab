@@ -5,6 +5,10 @@ var Iterators = {
   // - tripler([7,50,4]) should return [21,150,12].
   // Use `map` to accomplish this.
   tripler: function (numbers) {
+    var tripler = numbers.map(function (n) {
+      return n * 3;
+    });
+    return tripler;
   },
 
   // perfectSquares() should take an array of numbers as a parameter
@@ -16,6 +20,12 @@ var Iterators = {
   // - perfectSquares([1,4,9]) should return [1,4,9].
   // Use `filter` to accomplish this.
   perfectSquares: function (numbers) {
+    var perfectSquares = numbers.filter(function (n) {
+      if (n === Math.sqrt(n) * Math.sqrt(n)) {
+        return n;
+      }
+    });
+    return perfectSquares;
   },
 
   // product() should accept an array of numbers as a parameter
@@ -26,6 +36,10 @@ var Iterators = {
   // - product([100,200,300]) should return 6000000.
   // Use `reduce` to accomplish this.
   product: function (numbers) {
+    var product =  numbers.reduce(function (a, b) {
+      return a * b;
+    });
+    return product;
   },
 
   // hasInstructor() accepts an array of names and should return true
@@ -39,6 +53,12 @@ var Iterators = {
   // Use `some` to accomplish this.
   // Hint: see `toLowerCase`, it could be useful.
   hasInstructor: function (names) {
+    // var instructors = ["tim", "elie", "alex"];
+    var hasInstructor = names.some(function (name) {
+      name = name.toLowerCase();
+      return name == "tim" || name == "elie" || name == "alex";
+    });
+    return hasInstructor;
   },
 
   // allSamePlayer() should accept an array of players, represented by
@@ -53,6 +73,10 @@ var Iterators = {
   // - allSamePlayer(["_","_","_"]) should return false.
   // Use `every` to accomplish this.
   allSamePlayer: function (players) {
+    var allSamePlayer = players.every(function (n) {
+      
+    });
+    return allSamePlayer;
   },
 
   // Also not an iterator metheod, necessarily. devowel() takes a
@@ -68,7 +92,16 @@ var Iterators = {
   // - devowel("Howdy") should return "Hwdy",
   // - devowel("Phone's ringing, dude.") should return "Phn's rngng, dd.".
   devowel: function (text) {
+    var vowels = ["a", "e", "i", "o", "u"];
+    var devowel = text.split().filter(function () {
+      return indexOf(vowels) === -1;
+     
+    });
+    text.join("");
+    return devowel;
+
   }
+
 };
 
 module.exports = Iterators;
